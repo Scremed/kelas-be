@@ -1,11 +1,13 @@
 <h3>Cara clone git</h3>
-<h5>Buka folder C:\xampp\htdocs dan buka cmd</h2>
-<h5>ketik</h5>
-<h5>git clone https://github.com/Scremed/Kelas-BE-H.git</h5>
-<h5>cp .env.example .env</h5>
-<h5>composer i</h5>
-<h5>php artisan key:generate</h5>
-<h5>php artisan serve</h5>
+<ul>
+    <li>Buka folder C:\xampp\htdocs dan buka cmd</li>
+    <li>ketik: git clone https://github.com/Scremed/Kelas-BE-H.git</li>
+    <li>cd Kelas-BE-H</li>
+    <li>cp .env.example .env</li>
+    <li>composer i</li>
+    <li>php artisan key:generate</li>
+    <li>php artisan serve atau code .</li>
+</ul>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
