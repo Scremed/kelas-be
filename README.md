@@ -6,6 +6,8 @@
     <li>cd kelas-be</li>
     <li>cp .env.example .env</li>
     <li>composer i</li>
+    <li>php artisan migrate</li>
+    <li>php artisan storage:link</li>
     <li>php artisan key:generate</li>
     <li>php artisan serve atau code .</li>
 </ul>
