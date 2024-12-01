@@ -2,8 +2,8 @@
 <ul>
     <li>download git: https://git-scm.com/downloads</li>
     <li>Buka folder C:\xampp\htdocs dan buka cmd</li>
-    <li>ketik: git clone https://github.com/Scremed/Kelas-BE-H.git</li>
-    <li>cd Kelas-BE-H</li>
+    <li>ketik: git clone https://github.com/Scremed/kelas-be.git</li>
+    <li>cd kelas-be</li>
     <li>cp .env.example .env</li>
     <li>composer i</li>
     <li>php artisan key:generate</li>
