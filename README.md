@@ -5,7 +5,7 @@
     <li>Buka folder C:\xampp\htdocs dan buka cmd</li>
     <li>git clone https://github.com/Scremed/kelas-be.git</li>
     <li>cd kelas-be</li>
-    <li>cp .env.example .env</li>
+    <li>copy .env.example .env</li>
     <li>composer i</li>
     <li>php artisan migrate</li>
     <li>php artisan storage:link</li>
