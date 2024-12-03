@@ -13,3 +13,7 @@ Route::get('/home', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/pertemuan3', function () {
+    return view('pertemuan3');
+});
