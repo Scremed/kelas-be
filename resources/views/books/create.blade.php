@@ -2,8 +2,8 @@
 
 
 @section('content')
-<div class="col-md-6">
-    <form method="POST" enctype="multipart/form-data">
+<div class="d-flex justify-content-center">
+    <form action="{{ route('createPage') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <h1>Create Book</h1>
         <div class="mb-3">
@@ -27,7 +27,10 @@
             <input type="file" class="form-control" id="cover" name="cover">
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="d-flex justify-content-between">
+            <a href="{{ route('home') }}" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
 </div>
 

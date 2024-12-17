@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('author');
             $table->integer('price');
             $table->date('release');
-            $table->string('cover');
+            $table->string('cover')->nullable();
             $table->timestamps();
         });
     }

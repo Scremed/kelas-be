@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
     <h1>Welcome to Bookstore</h1>
+    <a href="{{ route("createPage") }}" class="btn btn-primary">Create Book</a>
 
     <div class="row">
         @foreach ($books as $book)
@@ -13,7 +15,13 @@
                   <p class="card-text">{{ $book->author }}</p>
                   <p class="card-text">{{ $book->price }}</p>
                   <p class="card-text">{{ $book->release }}</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <a href="{{ route('updatePage', ['id' => $book->id]) }}" class="btn btn-primary">Update</a>
+                
+                  <form action="{{ route('deleteBook', ['id' => $book->id]) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
                 </div>
             </div>
         </div>
