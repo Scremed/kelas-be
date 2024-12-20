@@ -31,6 +31,15 @@ edit.blade.php
             <input type="number" class="form-control" id="price" name="price" value="{{ old('price', $book->price) }}">
         </div>
         <div class="mb-3">
+            <label for="category_id" class="form-label">Book Category</label>
+            <select class="form-control" id="category_id" name="category_id">
+                <option value="">Select Category</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}" {{ $book->category_id == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="release" class="form-label">Release Date</label>
             <input type="date" class="form-control" id="release" name="release" value="{{ old('release', $book->release) }}">
         </div>

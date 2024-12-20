@@ -19,6 +19,9 @@ return new class extends Migration
             $table->date('release');
             $table->string('cover')->nullable();
             $table->timestamps();
+
+            $table->unsignedBigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

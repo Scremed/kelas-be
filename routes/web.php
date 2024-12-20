@@ -27,3 +27,8 @@ Route::patch('/update-book/{id}', [BookController::class, 'updateBook'])->name('
 
 //Delete Method -> menghapus data buku
 Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name('deleteBook');
+
+
+Route::get('/create-category', [BookController::class, 'categoryPage'])->name('categoryPage');
+//Post Method -> membuat data category
+Route::post('/create-category', [BookController::class, 'createCategory'])->name('createCategory');

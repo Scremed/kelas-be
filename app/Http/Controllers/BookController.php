@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -23,26 +24,31 @@ class BookController extends Controller
             'author' => $request->author,
             'price' => $request->price,
             'release' => $request->release,
-            'cover' => $filename
+            'cover' => $filename,
+            'category_id' => $request->category_id
         ]);
 
-        return redirect('/home');
+        return redirect(route('home'));
     }
 
     public function getCreatePage() {
-        return view('books.create');
+        $categories = Category::all();
+
+        return view('books.create', compact('categories'));
     }
 
     public function index() {
-        $books = Book::all();
+        $books = Book::with('category')->get();
+        $categories = Category::with('books')->get();
 
-        return view('books.home', compact('books'));
+        return view('books.home', compact('books', 'categories'));
     }
 
     public function getUpdatePage($id) {
         $book = Book::find($id);
+        $categories = Category::all();
 
-        return view('books.edit', compact('book'));
+        return view('books.edit', compact('book', 'categories'));
     }
 
     public function updateBook($id, Request $request) {
@@ -53,7 +59,8 @@ class BookController extends Controller
             'author' => 'required|string|max:100',
             'price' => 'required|numeric|min:0',
             'release' => 'required|date',
-            'cover' => 'nullable|image'
+            'cover' => 'nullable|image',
+            'category_id' => 'required'
         ]);
 
         $filename = $book->cover;
@@ -68,7 +75,8 @@ class BookController extends Controller
             'author' => $request->author,
             'price' => $request->price,
             'release' => $request->release,
-            'cover' => $filename
+            'cover' => $filename,
+            'category_id' => $request->category_id
         ]);
 
         return redirect(route('home'));
@@ -80,5 +88,17 @@ class BookController extends Controller
 
         // Book::destroy($id);
         return redirect(route('home'));
+    }
+
+    public function createCategory(Request $request) {
+        Category::create([
+            'name' => $request->name
+        ]);
+
+        return redirect(route('createPage'));
+    } 
+
+    public function categoryPage() {
+        return view('books.createCategory');
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
@@ -11,7 +12,11 @@ class Book extends Model
         'author',
         'price',
         'release',
-        'cover'
+        'cover',
+        'category_id'
     ];
 
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }
