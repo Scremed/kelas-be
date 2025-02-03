@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-
+use App\Http\Controllers\BuyerController;
 
 Route::get('/about', function () {
     return view('about');
@@ -32,3 +32,5 @@ Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name(
 Route::get('/create-category', [BookController::class, 'categoryPage'])->name('categoryPage');
 //Post Method -> membuat data category
 Route::post('/create-category', [BookController::class, 'createCategory'])->name('createCategory');
+
+Route::get('/purchase-list', [BuyerController::class, 'viewBuyer'])->name('viewBuyer');
