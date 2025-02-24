@@ -38,7 +38,7 @@ class BookController extends Controller
     }
 
     public function index() {
-        $books = Book::with('category')->get();
+        $books = Book::with('category')->simplePaginate(5);
         $categories = Category::with('books')->get();
 
         return view('books.home', compact('books', 'categories'));

@@ -29,4 +29,6 @@
         </div>
         @endforeach
     </div>
+
+    {{ $books->links() }}
 @endsection
